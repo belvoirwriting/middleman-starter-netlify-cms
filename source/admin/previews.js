@@ -21,10 +21,10 @@ const BlogPreview = ({ entry, widgetFor }) => {
   )
 }
 
-const ProductPreview = ({ entry, widgetFor }) => {
+const ServicePreview = ({ entry, widgetFor }) => {
   const data = entry.get('data').toJS()
   return (
-    <div className="product-detail">
+    <div className="service-detail">
       <div className="image" style={{ backgroundImage: `url('${data.image}')` }}></div>
       <div className="content">
         <div className="meta">
@@ -70,7 +70,7 @@ const NavigationPreview = ({ entry }) => {
     <header className="header-primary">
       <div className="logo">
         <a href="/">
-          <img src="/images/logo.svg" alt="Kaldi"/>
+          <img src="/images/logo.svg" alt="Jules - dog walker"/>
         </a>
       </div>
       <a className="nav-button">
@@ -90,6 +90,6 @@ const NavigationPreview = ({ entry }) => {
 }
 
 CMS.registerPreviewTemplate('blog', BlogPreview)
-CMS.registerPreviewTemplate('product', ProductPreview)
+CMS.registerPreviewTemplate('service', ServicePreview)
 CMS.registerPreviewTemplate('home', HomePreview)
 CMS.registerPreviewTemplate('navigation', NavigationPreview)
