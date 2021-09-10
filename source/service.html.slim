@@ -1,0 +1,13 @@
+.service-detail
+  .image style=background_image(image_path(service.image))
+  .content
+    .meta
+      h1 = service.title
+
+      
+      .price
+        - currency = data.settings.units.currency || '£' 
+        span = currency + service.price.to_s 
+
+    .body
+      = markdown service.body
