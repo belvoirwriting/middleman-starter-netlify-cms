@@ -1,0 +1,12 @@
+//link to service by converting the title to a slug
+.service
+  = link_to '/services/' + service.title.parameterize + '/'
+    .service-image
+      = image_tag product.image
+    .service-content
+      .title
+        h3 = service.title
+      .price
+        p 
+          - currency = data.settings.units.currency || '£' 
+          = currency + service.price.to_s 
