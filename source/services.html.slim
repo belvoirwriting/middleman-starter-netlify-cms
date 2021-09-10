@@ -1,0 +1,11 @@
+section.services
+  .container
+    h2
+      | Services
+    .row
+      //service is structured: ['filename', 'data']
+      //sort by newest service
+      - data.products.sort {|(_filename_a, a),(_filename_b, b)| b.date <=> a.date}.each do | (_filename, service) |
+
+        //to get the actual data:
+        = partial 'partials/services/service', locals: {service: service}
